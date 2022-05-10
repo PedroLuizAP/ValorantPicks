@@ -37,11 +37,19 @@ namespace WpfApp1
 
             string text = ComboMapas.SelectedItem.ToString();
             if (text.Equals("Haven"))
-                MessageBox.Show("MAPA BOM PRA JETT");
+                MessageBox.Show("Mapa bom para Chamber");
             else if (text.Equals("Icebox"))
-                MessageBox.Show("MAPA BOM PRA VIPER");
+                MessageBox.Show("Mapa bom para viper");
             else if (text.Equals("Breeze"))
-                MessageBox.Show("MAPA BOM PRA KILL JOY");
+                MessageBox.Show("Mapa bom para Jett");
+            else if (text.Equals("Ascent"))
+                MessageBox.Show("Mapa bom para Sova");
+            else if (text.Equals("Split"))
+                MessageBox.Show("Mapa bom para Reyna");
+            else if (text.Equals("Bind"))
+                MessageBox.Show("Mapa bom para Brimstone");
+            else if (text.Equals("Fracture"))
+                MessageBox.Show("Mapa bom para Neon");
             else
                 MessageBox.Show("DADOS NÃO ENCONTRADO");
 

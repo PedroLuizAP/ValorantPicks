@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <ComboBox x:Name="ComboMapas" Grid.Row="0" Grid.Column="0"/>
-        <Button Grid.Row="0" Grid.Column="1" Content="Texto" Click="Botao_OnClick"/>
+        <Button Grid.Row="0" Grid.Column="1" Content="Pesquisar" Click="Botao_OnClick"/>
         <TextBox Grid.Row="1" Margin="0 5 0 0" IsReadOnly="True"/>
     </Grid>
 </Window>
