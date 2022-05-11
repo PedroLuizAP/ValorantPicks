@@ -38,7 +38,7 @@ namespace ValorantPicks
                 return;
             }
 
-            ViewModel.SelecionaMapa((Mapas)ComboMapas.SelectedItem);         
+            ViewModel.SelecionaMapa();         
         }
     }
 }

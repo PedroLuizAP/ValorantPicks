@@ -13,7 +13,7 @@ namespace ValorantPicks.ViewModel
     {
         public MainViewModel() { }
         
-        internal void SelecionaMapa(Mapas mapa)
+        internal void SelecionaMapa()
         {
             Informacoes = $"MAPA SELECIONADO: {SelectedMapa?.Description()}{Environment.NewLine}";
             switch (SelectedMapa)
