@@ -11,7 +11,7 @@
         d:DataContext="{d:DesignInstance Type=viewModel:MainViewModel}"
         ResizeMode="NoResize"
 
-        Title="MainView" Height="200" Width="600">
+        Title="Valorant Picks" Height="200" Width="600">
     <Window.Resources>
         <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
             <ObjectDataProvider.MethodParameters>
