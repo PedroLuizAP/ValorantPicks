@@ -5,53 +5,71 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using ValorantPicks.Model;
+using ValorantPicks.Helper;
 
 namespace ValorantPicks.ViewModel
 {
-    public class MainViewModel
+    public class MainViewModel : BaseViewModel
     {
-        public MainViewModel()
-        {
-
-        }
-
+        public MainViewModel() { }
+        
         internal void SelecionaMapa(Mapas mapa)
         {
-            string nomeMapa = mapa.ToString();
-
-            switch (nomeMapa)
+            Informacoes = $"MAPA SELECIONADO: {SelectedMapa?.Description()}{Environment.NewLine}";
+            switch (SelectedMapa)
             {
-                case "Haven":
-                    MessageBox.Show("Mapa bom para Chamber");
+                case Mapas.Haven:
+                    Informacoes += "Mapa bom para Chamber";
                     break;
 
-                case "Icebox":
-                    MessageBox.Show("Mapa bom para viper");
+                case Mapas.Icebox:
+                    Informacoes += "Mapa bom para viper";
                     break;
 
-                case "Breeze":
-                    MessageBox.Show("Mapa bom para Jett");
+                case Mapas.Breeze:
+                    Informacoes += "Mapa bom para Jett";
                     break;
 
-                case "Ascent":
-                    MessageBox.Show("Mapa bom para Sova");
+                case Mapas.Ascent:
+                    Informacoes += "Mapa bom para Sova";
                     break;
 
-                case "Split":
-                    MessageBox.Show("Mapa bom para Reyna");
+                case Mapas.Split:
+                    Informacoes += "Mapa bom para Reyna";
                     break;
 
-                case "Bind":
-                    MessageBox.Show("Mapa bom para Brimstone");
+                case Mapas.Bind:
+                    Informacoes += "Mapa bom para Brimstone";
                     break;
 
-                case "Fracture":
-                    MessageBox.Show("Mapa bom para Neon");
+                case Mapas.Fracture:
+                    Informacoes += "Mapa bom para Neon";
                     break;
 
                 default:
-                    MessageBox.Show("DADOS NÃO ENCONTRADO");
+                    Informacoes += "DADOS NÃO ENCONTRADO";
                     break;
+            }
+        }
+
+        private Mapas? _selectedMapa { get; set; }
+        public Mapas? SelectedMapa
+        {
+            get => _selectedMapa;
+            set
+            {
+                _selectedMapa = value;
+                OnPropertyChanged();
+            }
+        } 
+        private string _informacoes { get; set; }
+        public string Informacoes
+        {
+            get => _informacoes;
+            set
+            {
+                _informacoes = value;
+                OnPropertyChanged();
             }
         }
     }
