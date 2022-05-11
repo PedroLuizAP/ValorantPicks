@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp1.Model
+namespace ValorantPicks.Model
 {
-    internal enum Mapas
+    public enum Mapas
     {
         Ascent,
         Split,

@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp1.Model;
-using WpfApp1.ViewModel;
+using ValorantPicks.Model;
+using ValorantPicks.ViewModel;
 
-namespace WpfApp1
+namespace ValorantPicks
 {
     /// <summary>
     /// Interaction logic for MainView.xaml
@@ -28,7 +28,6 @@ namespace WpfApp1
             ViewModel = new MainViewModel();
             DataContext = ViewModel;
             InitializeComponent();
-            ComboMapas.ItemsSource = Enum.GetValues(typeof(Mapas)).Cast<Mapas>();
         }
 
         private void Pesquisar_OnClick(object sender, RoutedEventArgs e)
