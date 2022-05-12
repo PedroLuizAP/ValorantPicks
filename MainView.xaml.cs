@@ -28,6 +28,8 @@ namespace ValorantPicks
             ViewModel = new MainViewModel();
             DataContext = ViewModel;
             InitializeComponent();
+            CloseButton.MouseEnter += TopControls_OnMouseEnter;
+            CloseButton.MouseLeave += TopControls_OnMouseLeave;
         }
 
         private void Pesquisar_OnClick(object sender, RoutedEventArgs e)
@@ -39,6 +41,48 @@ namespace ValorantPicks
             }
 
             ViewModel.SelecionaMapa();         
+        }
+
+        private bool _buttonClickable;
+        public void TopControls_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var grid = (Grid)sender;
+            _buttonClickable = true;
+            grid.Background = grid.Name == "CloseButton" ? new SolidColorBrush(Colors.Red) : new SolidColorBrush(Colors.DimGray);
+        }
+
+        public void TopControls_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (_buttonClickable)
+                GetType().GetMethod(((Grid)sender).Name + "_Click")?.Invoke(this, null);
+        }
+
+        public void TopControls_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            var grid = (Grid)sender;
+            grid.Background = grid.Name == "CloseButton" ? new SolidColorBrush(Colors.IndianRed) : new SolidColorBrush(Colors.Gray);
+
+            HelperColor(grid);
+        }
+
+        public void TopControls_OnMouseLeave(object sender, MouseEventArgs e)
+        {
+            var grid = (Grid)sender;
+            _buttonClickable = false;
+            grid.Background = new SolidColorBrush(Colors.Transparent);
+
+            HelperColor(grid);
+        }
+
+        private void HelperColor(Grid grid)
+        {
+            if (VisualTreeHelper.GetChild(grid, 0) is Path child)
+                child.Stroke = new SolidColorBrush(Colors.White);
+        }
+
+        public void CloseButton_Click()
+        {
+            Close();
         }
     }
 }

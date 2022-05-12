@@ -14,9 +14,13 @@
         ResizeMode="NoResize"
         Title="Valorant Picks" Height="300" Width="800">
 
-    <Grid Background="#FD4556">
+    <WindowChrome.WindowChrome>
+        <WindowChrome x:Name="WindowChrome" CaptionHeight="32"/>
+    </WindowChrome.WindowChrome>
+
+        <Grid Background="#FD4556">
         <Grid.RowDefinitions>
-            <RowDefinition MaxHeight="40"/>
+            <RowDefinition MaxHeight="32"/>
             <RowDefinition Height="25"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -39,15 +43,24 @@
             </Grid.ColumnDefinitions>
         </Grid>
 
-        <TextBlock Text="VALORANT PICKS"
-                   Foreground="White"
-                   Grid.Column="1"
-                   Grid.Row="0"
+        <StackPanel Grid.Column="1"  Grid.Row="0">
+            <TextBlock Text="VALORANT PICKS"
+                   Foreground="White"                 
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"
                    FontFamily="Fonts/#Koulen"
-                   FontWeight="Medium"
+                   FontWeight="Medium"                   
                    FontSize="20"/>
+        </StackPanel>
+
+        <Grid WindowChrome.IsHitTestVisibleInChrome="True" HorizontalAlignment="Right"  Grid.Row="0"
+                  x:Name="CloseButton" Height="28" MouseLeftButtonDown="TopControls_OnMouseLeftButtonDown"
+                  MouseLeftButtonUp="TopControls_OnMouseLeftButtonUp" Grid.Column="3" Width="46"
+                  VerticalAlignment="Top" Background="Transparent">
+            <Path HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="False"
+                      StrokeThickness="1" Stroke="White" Data="{Binding Source={StaticResource Close}, Path=Data}"/>
+
+        </Grid>
 
         <ComboBox x:Name="ComboMapas" Grid.Row="1" ItemsSource="{Binding Source={helper:EnumBindingSource {x:Type model:Mapas}}}" 
                   Grid.Column="1" SelectedItem="{Binding SelectedMapa, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>

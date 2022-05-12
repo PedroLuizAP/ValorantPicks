@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:ValorantPicks"
              StartupUri="MainView.xaml">
     <Application.Resources>
-         
+        <Path x:Key="Close" Data="M 0,0 l 10, 10 M 0, 10 l 10, -10"/>
     </Application.Resources>
 </Application>
