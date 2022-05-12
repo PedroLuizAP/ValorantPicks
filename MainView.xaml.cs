@@ -48,7 +48,7 @@ namespace ValorantPicks
         {
             var grid = (Grid)sender;
             _buttonClickable = true;
-            grid.Background = grid.Name == "CloseButton" ? new SolidColorBrush(Colors.Red) : new SolidColorBrush(Colors.DimGray);
+            grid.Background = grid.Name == "CloseButton" ? new SolidColorBrush(Colors.Firebrick) : new SolidColorBrush(Colors.DimGray);
         }
 
         public void TopControls_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -60,7 +60,7 @@ namespace ValorantPicks
         public void TopControls_OnMouseEnter(object sender, MouseEventArgs e)
         {
             var grid = (Grid)sender;
-            grid.Background = grid.Name == "CloseButton" ? new SolidColorBrush(Colors.IndianRed) : new SolidColorBrush(Colors.Gray);
+            grid.Background = grid.Name == "CloseButton" ? new SolidColorBrush(Colors.Firebrick) : new SolidColorBrush(Colors.Gray);
 
             HelperColor(grid);
         }
