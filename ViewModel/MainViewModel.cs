@@ -15,7 +15,7 @@ namespace ValorantPicks.ViewModel
         
         internal void SelecionaMapa()
         {
-            Informacoes = $"MAPA SELECIONADO: {SelectedMapa?.Description()}{Environment.NewLine}";
+            Informacoes = $"MAPA SELECIONADO: {SelectedMapa?.GetDescription()}{Environment.NewLine}";
             switch (SelectedMapa)
             {
                 case Mapas.Haven:
@@ -23,7 +23,7 @@ namespace ValorantPicks.ViewModel
                     break;
 
                 case Mapas.Icebox:
-                    Informacoes += "Mapa bom para viper";
+                    Informacoes += "Mapa bom para Viper";
                     break;
 
                 case Mapas.Breeze:
