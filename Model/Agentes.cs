@@ -56,5 +56,11 @@ namespace ValorantPicks.Model
 
         [Classe("Iniciador")]
         Kayo,
+
+        [Classe("Sentinela")]
+        Chamber,
+
+        [Classe("Duelista")]
+        Neon,
     }
 }

@@ -19,31 +19,31 @@ namespace ValorantPicks.ViewModel
             switch (SelectedMapa)
             {
                 case Mapas.Haven:
-                    Informacoes += "Mapa bom para Chamber";
+                    Informacoes += $"Mapa bom para {Agentes.Chamber.GetClasse()}: {Agentes.Chamber.ToString()}";
                     break;
 
                 case Mapas.Icebox:
-                    Informacoes += "Mapa bom para Viper";
+                    Informacoes += $"Mapa bom para {Agentes.Viper.GetClasse()}: {Agentes.Viper.ToString()}";
                     break;
 
                 case Mapas.Breeze:
-                    Informacoes += "Mapa bom para Jett";
+                    Informacoes += $"Mapa bom para {Agentes.Jett.GetClasse()}: {Agentes.Jett.ToString()}";
                     break;
 
                 case Mapas.Ascent:
-                    Informacoes += "Mapa bom para Sova";
+                    Informacoes += $"Mapa bom para {Agentes.Sova.GetClasse()}: {Agentes.Sova.ToString()}";
                     break;
 
                 case Mapas.Split:
-                    Informacoes += "Mapa bom para Reyna";
+                    Informacoes += $"Mapa bom para {Agentes.Reyna.GetClasse()}: {Agentes.Reyna.ToString()}";
                     break;
 
                 case Mapas.Bind:
-                    Informacoes += "Mapa bom para Brimstone";
+                    Informacoes += $"Mapa bom para {Agentes.Brimstone.GetClasse()}: {Agentes.Brimstone.ToString()}";
                     break;
 
                 case Mapas.Fracture:
-                    Informacoes += "Mapa bom para Neon";
+                    Informacoes += $"Mapa bom para {Agentes.Neon.GetClasse()}: {Agentes.Neon.ToString()}";
                     break;
 
                 default:
