@@ -34,13 +34,16 @@ namespace ValorantPicks
 
         private void Pesquisar_OnClick(object sender, RoutedEventArgs e)
         {
-            if (ComboMapas.SelectedItem == null)
+            switch(ViewModel.SelectedPesquisa)
             {
-                MessageBox.Show("NÃO HÁ DADOS");
-                return;
-            }
+                case TipoPesquisa.Agente:
+                    ViewModel.SelecionaAgentes();
+                    break;
 
-            ViewModel.SelecionaMapa();         
+                case TipoPesquisa.Mapa:
+                    ViewModel.SelecionaMapa();
+                    break;
+            }
         }
 
         private bool _buttonClickable;

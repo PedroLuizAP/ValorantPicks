@@ -12,7 +12,99 @@ namespace ValorantPicks.ViewModel
     public class MainViewModel : BaseViewModel
     {
         public MainViewModel() { }
-        
+
+        private Mapas? _selectedMapa { get; set; }
+        public Mapas? SelectedMapa
+        {
+            get => _selectedMapa;
+            set
+            {
+                _selectedMapa = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Agentes? _selectedAgente { get; set; }
+        public Agentes? SelectedAgente
+        {
+            get => _selectedAgente;
+            set
+            {
+                _selectedAgente = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private TipoPesquisa _selectedPesquisa { get; set; } = TipoPesquisa.Mapa;
+        public TipoPesquisa SelectedPesquisa
+        {
+            get => _selectedPesquisa;
+            set
+            {
+                LegendaBusca = value == TipoPesquisa.Agente ? "Agentes:" : "Mapas:";
+                VisibilityAgentes = value == TipoPesquisa.Agente ? Visibility.Visible : Visibility.Collapsed;
+                VisibilityMapas = value == TipoPesquisa.Mapa ? Visibility.Visible : Visibility.Collapsed; ;
+                _selectedPesquisa = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _informacoes { get; set; }
+        public string Informacoes
+        {
+            get => _informacoes;
+            set
+            {
+                _informacoes = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _legendaBusca { get; set; } = "Mapas:";
+
+        public string LegendaBusca
+        {
+            get => _legendaBusca;
+            set
+            {
+                _legendaBusca = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Visibility _visibilityMapas { get; set; }
+        public Visibility VisibilityMapas
+        {
+            get => _visibilityMapas;
+            set
+            {
+                _visibilityMapas = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Visibility _visibilityAgentes { get; set; }
+        public Visibility VisibilityAgentes
+        {
+            get => _visibilityAgentes;
+            set
+            {
+                _visibilityAgentes = value;
+                OnPropertyChanged();
+            }
+        }
+
+        internal void SelecionaAgentes()
+        {
+            if (SelectedAgente == null)
+            {
+                Informacoes = "DADOS NÃO ENCONTRADOS.";
+                return;
+            }
+            Informacoes = $"INFORMAÇÕES DO AGENTE SELECIONADO: {Environment.NewLine}";
+
+            Informacoes += $"{SelectedAgente.ToString()}´é um {SelectedAgente.GetClasse()}";            
+        }
         internal void SelecionaMapa()
         {
             Informacoes = $"MAPA SELECIONADO: {SelectedMapa?.GetDescription()}{Environment.NewLine}";
@@ -49,27 +141,6 @@ namespace ValorantPicks.ViewModel
                 default:
                     Informacoes += "DADOS NÃO ENCONTRADO";
                     break;
-            }
-        }
-
-        private Mapas? _selectedMapa { get; set; }
-        public Mapas? SelectedMapa
-        {
-            get => _selectedMapa;
-            set
-            {
-                _selectedMapa = value;
-                OnPropertyChanged();
-            }
-        } 
-        private string _informacoes { get; set; }
-        public string Informacoes
-        {
-            get => _informacoes;
-            set
-            {
-                _informacoes = value;
-                OnPropertyChanged();
             }
         }
     }
