@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Media\favicon.ico" />
+    <Resource Include="Media\favicon.ico" />
   </ItemGroup>
 
 </Project>
