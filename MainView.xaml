@@ -62,14 +62,14 @@
 
         </Grid>
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Tipo Pesquisa:" Margin="5 5 0 0"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Tipo de Pesquisa:" Margin="5 5 0 0"/>
         <ComboBox x:Name="ComboPesquisa" Grid.Row="2" Margin="5 5 0 0" ItemsSource="{Binding Source={helper:EnumBindingSource {x:Type model:TipoPesquisa}}}" 
                   Grid.Column="0" SelectedItem="{Binding SelectedPesquisa, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Selecione o tipo de Pesquisa"/>
 
         <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding LegendaBusca}" Margin="5 5 0 0"/>
 
         <ComboBox x:Name="ComboAgente" Grid.Row="2" Margin="5 5 0 0" Visibility="{Binding VisibilityAgentes}" ItemsSource="{Binding Source={helper:EnumBindingSource {x:Type model:Agentes}}}" 
-                  Grid.Column="1" SelectedItem="{Binding SelectedAgente, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Seleciona o Agente"/>
+                  Grid.Column="1" SelectedItem="{Binding SelectedAgente, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Selecione o Agente"/>
 
         <ComboBox x:Name="ComboMapas" Grid.Row="2" Margin="5 5 0 0" Visibility="{Binding VisibilityMapas}" ItemsSource="{Binding Source={helper:EnumBindingSource {x:Type model:Mapas}}}" 
                   Grid.Column="1" SelectedItem="{Binding SelectedMapa, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="Selecione o Mapa"/>
