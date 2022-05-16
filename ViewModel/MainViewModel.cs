@@ -115,35 +115,35 @@ namespace ValorantPicks.ViewModel
             switch (SelectedMapa)
             {
                 case Mapas.Haven:
-                    Informacoes += $"Mapa bom para {Agentes.Chamber.GetClasse()}: {Agentes.Chamber.ToString()}";
+                    Informacoes += $"Mapa bom para {Agentes.Chamber.GetClasse()}: {Agentes.Chamber}";
                     break;
 
                 case Mapas.Icebox:
-                    Informacoes += $"Mapa bom para {Agentes.Viper.GetClasse()}: {Agentes.Viper.ToString()}";
+                    Informacoes += $"Mapa bom para {Agentes.Viper.GetClasse()}: {Agentes.Viper}";
                     break;
 
                 case Mapas.Breeze:
-                    Informacoes += $"Mapa bom para {Agentes.Jett.GetClasse()}: {Agentes.Jett.ToString()}";
+                    Informacoes += $"Mapa bom para {Agentes.Jett.GetClasse()}: {Agentes.Jett}";
                     break;
 
                 case Mapas.Ascent:
-                    Informacoes += $"Mapa bom para {Agentes.Sova.GetClasse()}: {Agentes.Sova.ToString()}";
+                    Informacoes += $"Mapa bom para {Agentes.Sova.GetClasse()}: {Agentes.Sova}";
                     break;
 
                 case Mapas.Split:
-                    Informacoes += $"Mapa bom para {Agentes.Reyna.GetClasse()}: {Agentes.Reyna.ToString()}";
+                    Informacoes += $"Mapa bom para {Agentes.Reyna.GetClasse()}: {Agentes.Reyna}";
                     break;
 
                 case Mapas.Bind:
-                    Informacoes += $"Mapa bom para {Agentes.Brimstone.GetClasse()}: {Agentes.Brimstone.ToString()}";
+                    Informacoes += $"Mapa bom para {Agentes.Brimstone.GetClasse()}: {Agentes.Brimstone}";
                     break;
 
                 case Mapas.Fracture:
-                    Informacoes += $"Mapa bom para {Agentes.Neon.GetClasse()}: {Agentes.Neon.ToString()}";
+                    Informacoes += $"Mapa bom para {Agentes.Neon.GetClasse()}: {Agentes.Neon}";
                     break;
 
                 default:
-                    Informacoes += "DADOS NÃO ENCONTRADO";
+                    Informacoes += "DADOS NÃO ENCONTRADOS";
                     break;
             }
         }
