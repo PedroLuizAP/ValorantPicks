@@ -139,7 +139,7 @@ namespace ValorantPicks.ViewModel
                     break;
 
                 default:
-                    Informacoes += "DADOS NÃO ENCONTRADO";
+                    Informacoes += "DADOS NÃO ENCONTRADOS";
                     break;
             }
         }

@@ -46,6 +46,16 @@ namespace ValorantPicks
             }
         }
 
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Button.Background = new SolidColorBrush(Colors.Gray);
+        }
+
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Button.Background = new SolidColorBrush(Color.FromRgb(83, 33, 43));
+        }
+
         private bool _buttonClickable;
         public void TopControls_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
