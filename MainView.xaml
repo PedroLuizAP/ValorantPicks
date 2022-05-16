@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
-        xmlns:model="clr-namespace:ValorantPicks.Model"
+        xmlns:model="clr-namespace:ValorantPicks.Model.Enum"
         xmlns:local="clr-namespace:ValorantPicks"
         xmlns:viewModel="clr-namespace:ValorantPicks.ViewModel"
         xmlns:helper="clr-namespace:ValorantPicks.Helper"

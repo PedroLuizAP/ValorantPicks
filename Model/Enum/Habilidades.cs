@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ValorantPicks.Model
+namespace ValorantPicks.Model.Enum
 {
-    public enum TipoPesquisa
+    public enum Habilidades
     {
-        Mapa,
-        Agente
+        Passiva,
+        C,
+        Q,
+        E,
+        X       
     }
 }

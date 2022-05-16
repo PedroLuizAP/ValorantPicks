@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
-namespace ValorantPicks.Model
+namespace ValorantPicks.Model.Enum
 {
     public enum Mapas
     {

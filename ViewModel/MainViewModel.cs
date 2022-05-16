@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using ValorantPicks.Model;
+using ValorantPicks.Model.Enum;
 using ValorantPicks.Helper;
 
 namespace ValorantPicks.ViewModel
@@ -101,9 +101,13 @@ namespace ValorantPicks.ViewModel
                 Informacoes = "DADOS NÃO ENCONTRADOS.";
                 return;
             }
+#if DEBUG
+
+#else
             Informacoes = $"INFORMAÇÕES DO AGENTE SELECIONADO: {Environment.NewLine}";
 
-            Informacoes += $"{SelectedAgente.ToString()}´é um {SelectedAgente.GetClasse()}";            
+            Informacoes += $"{SelectedAgente.ToString()}´é um {SelectedAgente.GetClasse()}";
+#endif
         }
         internal void SelecionaMapa()
         {
