@@ -9,7 +9,7 @@ namespace ValorantPicks.Model
 {
     public class Agente
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Nome { get; set; }
         public ClasseAgente Classe { get; set; }
         public List<Habilidade> Habilidades { get; set; }
