@@ -34,16 +34,7 @@ namespace ValorantPicks
 
         private void Pesquisar_OnClick(object sender, RoutedEventArgs e)
         {
-            switch(ViewModel.SelectedPesquisa)
-            {
-                case TipoPesquisa.Agente:
-                    ViewModel.SelecionaAgentes();
-                    break;
-
-                case TipoPesquisa.Mapa:
-                    ViewModel.SelecionaMapa();
-                    break;
-            }
+            ViewModel.Pesquisa();
         }
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)

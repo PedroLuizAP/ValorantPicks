@@ -14,16 +14,16 @@ namespace ValorantPicks.Repository
         {
         }
 
-        internal Agente FindById(long Id)
+        internal Agente FindById(long id)
         {
 #if DEBUG
-           Habilidade habilidade = new() { Id = Id, Descricao = "Teste descrição", Tipo = Habilidades.Passiva }; 
+           Habilidade habilidade = new() { Id = id, Descricao = "Teste descrição", Tipo = Habilidades.Passiva }; 
 #endif
 
             Agente agente = new() 
             {
 #if DEBUG
-               Id = Id,
+               Id = id,
                Nome = "Viper",
                Classe = ClasseAgente.Controlador,
                Habilidades = new () { habilidade}                              

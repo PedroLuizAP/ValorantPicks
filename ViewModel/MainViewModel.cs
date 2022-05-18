@@ -93,6 +93,19 @@ namespace ValorantPicks.ViewModel
                 OnPropertyChanged();
             }
         }
+        internal void Pesquisa()
+        {
+            switch (SelectedPesquisa)
+            {
+                case TipoPesquisa.Agente:
+                    SelecionaAgentes();
+                    break;
+
+                case TipoPesquisa.Mapa:
+                    SelecionaMapa();
+                    break;
+            }
+        }
 
         internal void SelecionaAgentes()
         {
