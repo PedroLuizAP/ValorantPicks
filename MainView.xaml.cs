@@ -32,9 +32,9 @@ namespace ValorantPicks
             CloseButton.MouseLeave += TopControls_OnMouseLeave;
         }
 
-        private void Pesquisar_OnClick(object sender, RoutedEventArgs e)
+        private async void Pesquisar_OnClick(object sender, RoutedEventArgs e)
         {
-            ViewModel.Pesquisa();
+            await ViewModel.Pesquisa();
         }
 
         private void Button_MouseEnter(object sender, MouseEventArgs e)
