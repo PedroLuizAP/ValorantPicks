@@ -32,7 +32,7 @@ namespace ValorantPicks.Helper
             var atributo = FindStringAttribute(eEnum, typeof(Classe));
             if(atributo == null) return eEnum.ToString();
             return ((DescriptionAttribute)atributo.ElementAt(0)).Description;
-        }     
+            
             return ((Classe)atributo.ElementAt(0)).Description;
         }
 
