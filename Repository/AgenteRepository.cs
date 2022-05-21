@@ -1,35 +1,57 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ValorantPicks.Helper;
 using ValorantPicks.Model;
 using ValorantPicks.Model.Enum;
+using ValorantPicks.Repository.Base;
 
 namespace ValorantPicks.Repository
 {
-    internal class AgenteRepository
+    public class AgenteRepository : BaseRepository
     {
         internal AgenteRepository()
         {
+
         }
 
         internal Agente FindById(long Id)
         {
+            Agente agente;
 #if DEBUG
-           Habilidade habilidade = new() { Id = Id, Descricao = "Teste descrição", Tipo = Habilidades.Passiva }; 
-#endif
-
-            Agente agente = new() 
+            Habilidade habilidade = new() { Id = Id, Descricao = "Teste descrição", Tipo = Habilidades.Passiva };
+            agente = new() 
             {
-#if DEBUG
                Id = Id,
                Nome = "Viper",
                Classe = ClasseAgente.Controlador,
                Habilidades = new () { habilidade}                              
-#endif
+
             };
-            return agente;
+#endif
+
+#if DB
+            agente = new();
+            using (conn)
+            {
+                MySqlCommand command = conn.CreateCommand();
+                command.CommandText = $"SELECT * FROM agentes WHERE idAgente = {Id}";
+                conn.Open();
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (reader != null)
+                        agente = reader.GetSchemaTable().MapAgente();
+                    break;
+                }
+            }
+#endif
+                return agente;
         }
     }
 }

@@ -1,12 +1,15 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using ValorantPicks.Helper.Attributes;
+using ValorantPicks.Model;
 
 namespace ValorantPicks.Helper
 {
@@ -28,6 +31,17 @@ namespace ValorantPicks.Helper
         {
             var atributo = FindStringAttribute(eEnum, typeof(Classe));
             return ((Classe)atributo.ElementAt(0)).Description;
-        }     
+        }
+
+        public static Agente MapAgente (this DataTable dt )
+        {
+            var row = dt.Rows;
+            Agente agente = new()
+            {
+
+            };
+
+            return agente;
+        }
     }
 }

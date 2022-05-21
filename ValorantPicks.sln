@@ -7,10 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValorantPicks", "ValorantPi
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DB|Any CPU = DB|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{763C7839-756A-44AD-B56C-5BAE5DA691E8}.DB|Any CPU.ActiveCfg = DB|Any CPU
+		{763C7839-756A-44AD-B56C-5BAE5DA691E8}.DB|Any CPU.Build.0 = DB|Any CPU
 		{763C7839-756A-44AD-B56C-5BAE5DA691E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{763C7839-756A-44AD-B56C-5BAE5DA691E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{763C7839-756A-44AD-B56C-5BAE5DA691E8}.Release|Any CPU.ActiveCfg = Release|Any CPU

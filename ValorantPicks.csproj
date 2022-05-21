@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Media\favicon.ico</ApplicationIcon>
+    <Configurations>Debug;Release;DB</Configurations>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.29" />
+  </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Media\favicon.ico" />
