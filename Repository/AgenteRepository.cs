@@ -38,7 +38,7 @@ namespace ValorantPicks.Repository
             using (conn)
             {
                 MySqlCommand command = conn.CreateCommand();
-                command.CommandText = $"SELECT * FROM agentes WHERE idAgente = {Id}";
+                command.CommandText = $"SELECT * FROM agentes WHERE idAgente = {id}";
                 conn.Open();
 
                 MySqlDataReader reader = command.ExecuteReader();
