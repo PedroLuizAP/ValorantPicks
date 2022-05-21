@@ -18,7 +18,7 @@ namespace ValorantPicks.Repository
 
         }
 
-        internal Agente FindById(long Id)
+        internal Agente FindById(long id)
         {
             Agente agente;
 #if DEBUG

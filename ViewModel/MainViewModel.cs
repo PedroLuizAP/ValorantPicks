@@ -93,8 +93,21 @@ namespace ValorantPicks.ViewModel
                 OnPropertyChanged();
             }
         }
+        internal async Task Pesquisa()
+        {
+            switch (SelectedPesquisa)
+            {
+                case TipoPesquisa.Agente:
+                    await SelecionaAgentes();
+                    break;
 
-        internal void SelecionaAgentes()
+                case TipoPesquisa.Mapa:
+                    SelecionaMapa();
+                    break;
+            }
+        }
+
+        internal async Task SelecionaAgentes()
         {
             if (SelectedAgente == null)
             {
@@ -102,7 +115,10 @@ namespace ValorantPicks.ViewModel
                 return;
             }
 #if DEBUG
+            var agente = await agenteService.FindAgenteById(1); //simular id
 
+            Informacoes = $"{agente.Nome} É DO TIPO {agente.Classe.GetClasse()} E POSSUI AS SEGUINTES HABILIDADES{Environment.NewLine}";
+            agente.Habilidades.ForEach(habilidade => Informacoes += $"Habilidades :{habilidade.Tipo.ToString()} - {habilidade.Descricao}");
 #else
             Informacoes = $"INFORMAÇÕES DO AGENTE SELECIONADO: {Environment.NewLine}";
 

@@ -9,13 +9,18 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using ValorantPicks.Service;
 
 namespace ValorantPicks.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public BaseViewModel() { }
+        public BaseViewModel() 
+        { 
+            agenteService = new();
+        }
 
+        protected AgenteService agenteService;
 
 
         public event PropertyChangedEventHandler PropertyChanged;

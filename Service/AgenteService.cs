@@ -10,7 +10,7 @@ namespace ValorantPicks.Service
 {
     public class AgenteService
     {
-        private AgenteRepository repository;
+        private AgenteRepository repository = new();
         internal async Task<Agente> FindAgenteById(long Id)
         {
             return await Task.Run(() => repository.FindById(Id));
