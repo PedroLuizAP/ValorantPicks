@@ -125,8 +125,13 @@ namespace ValorantPicks.ViewModel
             Informacoes += $"{SelectedAgente.ToString()}´é um {SelectedAgente.GetClasse()}";
 #endif
         }
-        internal void SelecionaMapa()
+        internal async Task SelecionaMapa()
         {
+            if (SelectedMapa == null)
+                return;
+
+            var agente = await agenteService.FindAgenteByMapa((long)SelectedMapa);
+
             Informacoes = $"MAPA SELECIONADO: {SelectedMapa?.GetDescription()}{Environment.NewLine}";
             switch (SelectedMapa)
             {
