@@ -102,7 +102,7 @@ namespace ValorantPicks.ViewModel
                     break;
 
                 case TipoPesquisa.Mapa:
-                    SelecionaMapa();
+                    await SelecionaMapa();
                     break;
             }
         }
