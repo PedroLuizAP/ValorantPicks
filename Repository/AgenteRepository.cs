@@ -39,8 +39,10 @@ namespace ValorantPicks.Repository
                 }
                 reader?.Close();
             }
+            return agente;
+
 #endif
-                return agente;
+            return agente = new();
         }
         
         internal List<Agente> FindByMapa(long idMapa)
@@ -64,8 +66,9 @@ namespace ValorantPicks.Repository
                 }
                 reader?.Close();
             }
+            return agentes;
 #endif
-                return agentes;
+            return agentes = new();
         }
     }
 }
