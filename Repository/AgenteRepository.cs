@@ -34,7 +34,7 @@ namespace ValorantPicks.Repository
                 while (reader.Read())
                 {
                     if (reader != null)
-                        agente = reader.GetSchemaTable().MapAgente();
+                        ;// agente = reader.GetSchemaTable().MapAgente();
                     break;
                 }
                 reader?.Close();
@@ -60,7 +60,7 @@ namespace ValorantPicks.Repository
                 {
                     if (reader == null)
                         break;
-                        agentes.Add(reader.GetSchemaTable().MapAgente());
+                        //agentes.Add(reader.GetSchemaTable().MapAgente());
                 }
                 reader?.Close();
             }

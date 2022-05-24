@@ -32,13 +32,20 @@ namespace ValorantPicks.Helper
             var atributo = FindStringAttribute(eEnum, typeof(Classe));
             if(atributo == null) return eEnum.ToString();
             return ((DescriptionAttribute)atributo.ElementAt(0)).Description;
-            
-            return ((Classe)atributo.ElementAt(0)).Description;
         }
 
-        public static Agente MapAgente (this DataTable dt )
+        public static List<Agente> MapAgentes(this DataTable dt)
         {
-            var row = dt.Rows;
+            List<Agente> listaAgente = new ();
+            foreach(DataRow row in dt.Rows)
+            {
+                listaAgente.Add(row.MapAgente());
+            }
+            return listaAgente;
+        }
+
+        public static Agente MapAgente (this DataRow dt )
+        {           
             Agente agente = new()
             {
 
