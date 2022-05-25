@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,23 +53,17 @@ namespace ValorantPicks.Repository
             agentes = new();
             using (conn)
             {
-                MySqlCommand command = conn.CreateCommand();
-                command.CommandText = $"SELECT * FROM agentes a INNERJOIN MapaAgente ma ON ma.IdAgente = a.Idagente WHERE ma.IdMapa = {idMapa}";
+
+                DataTable dt = new();
                 conn.Open();
-
-                MySqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    if (reader == null)
-                        break;
-                        //agentes.Add(reader.GetSchemaTable().MapAgente());
-                }
-                reader?.Close();
+                string query = $"SELECT * FROM agentes WHERE idAgente = {id}";
+                MySqlDataAdapter value = new(query, conn);
+                value.Fill(dt);
+                agentes = dt.MapAgentes();
+                conn?.Close();
             }
             return agentes;
 #endif
-            return agentes = new();
         }
     }
 }
