@@ -53,5 +53,14 @@ namespace ValorantPicks.Helper
 
             return agente;
         }
+        public static Agente MapAgente (this MySqlDataReader reader )
+        {           
+            Agente agente = new()
+            {
+                //(long)reader["id"],
+            };
+
+            return agente;
+        }
     }
 }

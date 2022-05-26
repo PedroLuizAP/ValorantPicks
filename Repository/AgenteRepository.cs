@@ -35,7 +35,7 @@ namespace ValorantPicks.Repository
                 while (reader.Read())
                 {
                     if (reader != null)
-                        ;// agente = reader.GetSchemaTable().MapAgente();
+                        reader.MapAgente(); ;// agente = reader.GetSchemaTable().MapAgente();
                     break;
                 }
                 reader?.Close();
@@ -56,7 +56,7 @@ namespace ValorantPicks.Repository
 
                 DataTable dt = new();
                 conn.Open();
-                string query = $"SELECT * FROM agentes WHERE idAgente = {id}";
+                string query = $"SELECT * FROM agentes WHERE idAgente = {idMapa}";
                 MySqlDataAdapter value = new(query, conn);
                 value.Fill(dt);
                 agentes = dt.MapAgentes();
