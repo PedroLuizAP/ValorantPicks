@@ -1,7 +1,7 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,18 +26,15 @@ namespace ValorantPicks.Repository
             agente = new();
             using (conn)
             {
-                MySqlCommand command = conn.CreateCommand();
-                command.CommandText = $"SELECT * FROM agentes WHERE idAgente = {id}";
+                SqlCommand command = conn.CreateCommand();
+                command.CommandText = $"SELECT IDAgente, Nome FROM agente WHERE IDAgente = {id}";
                 conn.Open();
 
-                MySqlDataReader reader = command.ExecuteReader();
+                SqlDataReader reader = command.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    if (reader != null)
-                        reader.MapAgente(); ;// agente = reader.GetSchemaTable().MapAgente();
-                    break;
-                }
+                if (reader.Read() && reader != null)
+                    reader.MapAgente();
+
                 reader?.Close();
             }
             return agente;
@@ -45,7 +42,7 @@ namespace ValorantPicks.Repository
 #endif
             return agente = new();
         }
-        
+
         internal List<Agente> FindByMapa(long idMapa)
         {
             List<Agente> agentes;
@@ -57,7 +54,7 @@ namespace ValorantPicks.Repository
                 DataTable dt = new();
                 conn.Open();
                 string query = $"SELECT * FROM agentes WHERE idAgente = {idMapa}";
-                MySqlDataAdapter value = new(query, conn);
+                SqlDataAdapter value = new(query, conn);
                 value.Fill(dt);
                 agentes = dt.MapAgentes();
                 conn?.Close();

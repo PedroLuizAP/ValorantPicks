@@ -1,8 +1,8 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -53,11 +53,12 @@ namespace ValorantPicks.Helper
 
             return agente;
         }
-        public static Agente MapAgente (this MySqlDataReader reader )
-        {           
+        public static Agente MapAgente (this SqlDataReader reader )
+        {
             Agente agente = new()
             {
-                //(long)reader["id"],
+               Id = (long)reader["IDAgente"],
+               Nome = reader["Nome"].ToString(),
             };
 
             return agente;
