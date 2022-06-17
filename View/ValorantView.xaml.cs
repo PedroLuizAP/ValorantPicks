@@ -10,37 +10,40 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ValorantPicks.Model;
-using ValorantPicks.Model.Enum;
-using ValorantPicks.View;
 using ValorantPicks.ViewModel;
 
-namespace ValorantPicks
+namespace ValorantPicks.View
 {
     /// <summary>
-    /// Interaction logic for MainView.xaml
+    /// Lógica interna para ValorantView.xaml
     /// </summary>
-    public partial class MainView : Window
+    public partial class ValorantView : Window
     {
-        public MainView()
-        {            
+        private MainViewModel ViewModel;
+
+        public ValorantView()
+        {
+            ViewModel = new ();
+            DataContext = ViewModel;
             InitializeComponent();
             CloseButton.MouseEnter += TopControls_OnMouseEnter;
             CloseButton.MouseLeave += TopControls_OnMouseLeave;
         }
 
-        private void Iniciar_OnClick(object sender, RoutedEventArgs e)
+        private async void Pesquisar_OnClick(object sender, RoutedEventArgs e)
         {
-            Connection.Instancia = textInstancia.Text;
-            Connection.Banco = textBanco.Text;
-            Connection.Usuario = textUsuario.Text;
-            Connection.Senha = textSenha.Password;  
-            
-            ValorantView valorantView = new();
-            valorantView.Show();
-            this.Close();
+            await ViewModel.Pesquisa();
+        }
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Button.Background = new SolidColorBrush(Colors.Gray);
+        }
+
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Button.Background = new SolidColorBrush(Color.FromRgb(83, 33, 43));
         }
 
         private bool _buttonClickable;

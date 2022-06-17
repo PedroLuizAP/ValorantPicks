@@ -118,7 +118,7 @@ namespace ValorantPicks.ViewModel
             var agente = await agenteService.FindAgenteById(1); //simular id
 
             Informacoes = $"{agente.Nome} É DO TIPO {agente.Classe.GetClasse()} E POSSUI AS SEGUINTES HABILIDADES{Environment.NewLine}";
-            agente.Habilidades.ForEach(habilidade => Informacoes += $"Habilidades :{habilidade.Tipo.ToString()} - {habilidade.Descricao}");
+            agente.Habilidades.ForEach(habilidade => Informacoes += $"Habilidades :{habilidade.Tipo} - {habilidade.Descricao}");
 
         }
         internal async Task SelecionaMapa()
