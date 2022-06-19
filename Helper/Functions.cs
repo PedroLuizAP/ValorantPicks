@@ -44,16 +44,16 @@ namespace ValorantPicks.Helper
             return listaAgente;
         }
 
-        public static Agente MapAgente (this DataRow dt )
-        {           
+        public static Agente MapAgente (this SqlDataReader reader)
+        {
             Agente agente = new()
             {
-
+               Id = (long)reader["IDAgente"],
+               Nome = reader["Nome"].ToString(),
             };
 
             return agente;
-        }
-        public static Agente MapAgente (this SqlDataReader reader )
+        }  public static Agente MapAgente (this DataRow reader)
         {
             Agente agente = new()
             {
