@@ -36,8 +36,11 @@ namespace ValorantPicks
             Connection.Instancia = textInstancia.Text;
             Connection.Banco = textBanco.Text;
             Connection.Usuario = textUsuario.Text;
-            Connection.Senha = textSenha.Password;  
-            
+            Connection.Senha = textSenha.Password;
+
+            if (!Connection.ValidaConnection())
+                return;
+
             ValorantView valorantView = new();
             valorantView.Show();
             this.Close();
