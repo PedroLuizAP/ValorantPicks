@@ -19,9 +19,6 @@ namespace ValorantPicks.View
     /// </summary>
     public partial class AdminView : Window
     {
-        public AdminView()
-        {
-            InitializeComponent();
-        }
+        public AdminView()=>InitializeComponent();
     }
 }
