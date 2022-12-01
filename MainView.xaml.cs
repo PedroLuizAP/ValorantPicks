@@ -83,9 +83,7 @@ namespace ValorantPicks
                 child.Stroke = new SolidColorBrush(Colors.White);
         }
 
-        public void CloseButton_Click()
-        {
-            Close();
-        }
+        public void CloseButton_Click()=>Close();
+        
     }
 }
